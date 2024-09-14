@@ -1,0 +1,14 @@
+.idea
+.aws
+.terraform
+*.tfstate
+*.tfstate.backup
+.terraform.lock.hcl
+tfplan
+
+#exclude generated files
+certificate_pem.cert.pem
+private_key.key
+public_key.key
+root.pem
+endpoint.txt

@@ -1,0 +1,32 @@
+version: '3.3'
+services:
+  backautomat:
+    build:
+      context: ./devices/backautomat
+    volumes:
+    - "./devices/backautomat/:/device/"
+    environment:
+    depends_on:
+
+  leergut_automat:
+    build:
+      context: ./devices/leergut_automat
+    volumes:
+      - "./devices/leergut_automat/:/device/"
+    environment:
+    depends_on:
+
+  freezer:
+    build:
+      context: ./devices/freezer
+    volumes:
+      - "./devices/freezer/:/device/"
+    environment:
+    depends_on:
+      #- temperature_sensor
+
+    temperature_sensor:
+      build:
+        context: ./devices/temperature_sensor
+      volumes:
+        - "./devices/temperature_sensor/:/device/"
